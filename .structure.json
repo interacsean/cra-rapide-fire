@@ -1,0 +1,27 @@
+{
+  "short": {
+    "App": [
+      "@Toolbar",
+      {
+        "@Editor": [
+          { ".structure": ["@AddStructureComponent.add", ".list"] },
+          { ".logic": [] },
+          { ".props": [] }
+        ]
+      }
+    ]
+  },
+  "long": {
+    "App": [
+      ["@Toolbar", "..."],
+      [
+        "@Editor",
+        [
+          [".structure", [["@AddStructureComponent.add"], [".list"]]],
+          [".logic", "..."],
+          [".props", "..."]
+        ]
+      ]
+    ]
+  }
+}
