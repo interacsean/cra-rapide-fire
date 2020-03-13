@@ -1,0 +1,8 @@
+.card {
+  width: calc(33.33% - 0.5em);
+  margin-right: 0.5em;
+  margin-top: 0.67em;
+  &:nth-child(3) {
+    margin-right: 0;
+  }
+}

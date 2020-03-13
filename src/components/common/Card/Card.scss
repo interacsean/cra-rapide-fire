@@ -1,0 +1,33 @@
+@import '../../../theme/variables';
+@import '../../../theme/functions';
+
+.main {
+}
+
+.--default-padding {
+  padding: $pad $pad-2;
+}
+
+.--default-radius {
+  border-radius: $card-border-radius;
+}
+
+.--var-inset {
+  border-radius: 2px;
+  @include light-theme {
+    border: $card-inset-border-width solid rgba(0, 0, 0, 0.06);
+  }
+  :global(.theme--dark) & {
+    background-color: $col-bg-dark-lt1;
+  }
+}
+
+.--var-card {
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+  :global(.theme--light) & {
+    background-color: $col-light;
+  }
+  :global(.theme--dark) & {
+    background-color: $col-bg-dark-lt2;
+  }
+}

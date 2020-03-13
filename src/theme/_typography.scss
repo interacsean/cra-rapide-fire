@@ -1,0 +1,227 @@
+@import 'variables';
+@import 'functions';
+
+:global(.content--anemic) {
+  font-size: toRem(16px);
+  line-height: 167%;
+  font-family: $font-content;
+  @include tablet-plus {
+    font-size: toRem(18px);
+  }
+  + :global(p) {
+    margin-top: 1em;
+  }
+}
+:global(.content) {
+  @extend :global(.content--anemic);
+  color: $col-content;
+  :global(.theme--dark) & {
+    color: $col-content-on-dark;
+  }
+}
+
+:global(.content-feature--anemic) {
+  font-size: toRem(22px);
+  line-height: 157%;
+  font-family: $font-content;
+  @include tablet-plus {
+    font-size: toRem(22px);
+  }
+  + :global(p) {
+    margin-top: 1em;
+  }
+}
+:global(.content-feature) {
+  @extend :global(.content-feature--anemic);
+  color: $col-content;
+  :global(.theme--dark) & {
+    color: $col-content-on-dark;
+  }
+}
+
+:global(.content-caption--anemic) {
+  font-size: toRem(13px);
+  font-family: $font-content;
+  @include tablet-plus {
+    font-size: toRem(14px);
+  }
+}
+:global(.content-caption) {
+  @extend :global(.content-caption--anemic);
+  color: $col-content-caption;
+  :global(.theme--dark) & {
+    color: $col-content-caption-on-dark;
+  }
+}
+
+:global(.content-detail--anemic) {
+  font-size: toRem(13px);
+  font-family: $font-content;
+  @include tablet-plus {
+    font-size: toRem(14px);
+  }
+}
+:global(.content-detail) {
+  @extend :global(.content-detail--anemic);
+  color: $col-content;
+  :global(.theme--dark) & {
+    color: $col-content-on-dark;
+  }
+}
+
+:global(.content-input-text--anemic) {
+  font-size: toRem(14px);
+  font-family: $font-content;
+  @include tablet-plus {
+    font-size: toRem(16px);
+  }
+}
+:global(.content-input-text) {
+  @extend :global(.content-input-text--anemic);
+  color: $col-content;
+  :global(.theme--dark) & {
+    color: $col-content-on-dark;
+  }
+}
+
+:global(.content-form-text--anemic) {
+  font-size: toRem(14px);
+  font-family: $font-content;
+  @include tablet-plus {
+    font-size: toRem(16px);
+  }
+}
+:global(.content-form-text) {
+  @extend :global(.content-form-text--anemic);
+  color: $col-content;
+  :global(.theme--dark) & {
+    color: $col-content-on-dark;
+  }
+}
+
+:global(.content-field-label--anemic) {
+  font-size: toRem(13px);
+  text-transform: uppercase;
+  font-family: $font-content;
+  @include tablet-plus {
+    font-size: toRem(14px);
+  }
+}
+:global(.content-field-label) {
+  @extend :global(.content-field-label--anemic);
+  color: $col-content;
+  :global(.theme--dark) & {
+    color: $col-content-on-dark;
+  }
+}
+
+:global(.content-field-group-label--anemic) {
+  font-size: toRem(16px);
+  font-weight: $font-weight-semibold;
+  font-family: $font-headings;
+  @include tablet-plus {
+    font-size: toRem(18px);
+  }
+}
+:global(.content-field-group-label) {
+  @extend :global(.content-field-group-label--anemic);
+  color: $col-heading-active;
+  :global(.theme--dark) & {
+    color: $col-heading-active-on-dark;
+  }
+}
+
+:global(.content-tag--anemic) {
+  font-size: toRem(10px);
+  font-weight: $font-weight-black;
+  font-family: $font-content;
+  text-transform: uppercase;
+}
+:global(.content-tag) {
+  @extend :global(.content-tag--anemic);
+  color: $col-content;
+  :global(.theme--dark) & {
+    color: $col-content-on-dark;
+  }
+}
+
+:global(.h1--anemic) {
+  // mobile font-size not finalised
+  font-size: toRem(48px);
+  line-height: 117%;
+  @include tablet-plus {
+    font-size: toRem(64px);
+  }
+  font-weight: $font-weight-semibold;
+  font-family: $font-headings;
+}
+:global(.h1) {
+  @extend :global(.h1--anemic);
+  color: $col-headings;
+  :global(.theme--dark) & {
+    color: $col-headings-on-dark;
+  }
+}
+
+:global(.h2--anemic) {
+  // mobile font-size not finalised
+  font-size: toRem(30px);
+  line-height: 137%;
+  @include tablet-plus {
+    font-size: toRem(39px);
+  }
+  font-weight: $font-weight-semibold;
+  font-family: $font-headings;
+}
+:global(.h2) {
+  @extend :global(.h2--anemic);
+  color: $col-headings;
+  :global(.theme--dark) & {
+    color: $col-headings-on-dark;
+  }
+}
+
+:global(.h3--anemic) {
+  font-size: toRem(28px);
+  line-height: 130%;
+  font-weight: $font-weight-semibold;
+  font-family: $font-headings;
+}
+:global(.h3) {
+  @extend :global(.h3--anemic);
+  color: $col-headings;
+  :global(.theme--dark) & {
+    color: $col-headings-on-dark;
+  }
+}
+
+:global(.h4--anemic) {
+  font-size: toRem(21px);
+  line-height: 117%;
+  font-weight: $font-weight-bold;
+  font-family: $font-headings;
+}
+:global(.h4) {
+  @extend :global(.h4--anemic);
+  color: $col-headings;
+  :global(.theme--dark) & {
+    color: $col-headings-on-dark;
+  }
+}
+
+:global(.h5--anemic) {
+  font-size: toRem(16px);
+  @include tablet-plus {
+    font-size: toRem(18px);
+  }
+  line-height: 117%;
+  font-weight: $font-weight-bold;
+  font-family: $font-headings;
+}
+:global(.h5) {
+  @extend :global(.h5--anemic);
+  color: $col-headings;
+  :global(.theme--dark) & {
+    color: $col-headings-on-dark;
+  }
+}

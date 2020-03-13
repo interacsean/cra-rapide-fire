@@ -1,0 +1,72 @@
+// ** Colors **
+$col-content: #171717;
+$col-content-on-dark: #ffffffd9; // 85%
+$col-headings: #342B3A;
+$col-headings-on-dark: #ffffffeb; // 92%
+$col-heading-active: #B60000;
+$col-heading-active-on-dark: #B60000;
+$col-content-caption: #808080;
+$col-content-caption-on-dark: $col-content-caption;
+$col-content-hint: #B7B7B7;
+$col-content-hint-on-dark: $col-content-hint;
+$col-light: #ffffff;
+$col-bg-light-dk1: #f8f8f8;
+$col-primary-cyan: #00DEEC;
+$col-secondary-orange: #EB582A;
+$col-link: #0C08C2;
+$col-link-visited: #1f007b;
+$col-lightblue-EBF1FF: #EBF1FF;
+
+// ** Grays **
+$col-gray-50: #808080;
+$col-gray-72: #B8B8B8;
+$col-gray-overlay: #00000044;
+
+$col-bg-dark: #221D28;
+//$col-bg-dark-grad: #221D28;
+$col-bg-dark-lt1: #2B2634;
+$col-bg-dark-lt2: #352E3F;
+
+// ** Sizings
+$card-border-radius: 3px;
+$card-inset-border-width: 1px;
+
+$pad: 1 * 16px;
+$golden-radio: 1.618;
+// - multiples
+$pad-2: $pad * $golden-radio;
+$pad-3: $pad-2 * $golden-radio;
+// - fractions
+$pad-1-2: $pad / $golden-radio;
+$pad-1-3: $pad-1-2 / $golden-radio;
+$pad-1-4: $pad-1-3 / $golden-radio;
+
+// ** Layout **
+$header-height: 40px;
+$header-height-md: 52px;
+$header-height-lg: 60px;
+
+// ** Headings **
+$font-headings: 'Raleway', sans-serif;
+$font-content: 'Lato', sans-serif;
+
+// ** Sizes **
+$base-font-size: 14px;
+
+// ** Weights **
+$font-weight-black: 900;
+$font-weight-extrabold: 800;
+$font-weight-bold: 700;
+$font-weight-semibold: 600;
+$font-weight-medium: 500;
+$font-weight-regular: 400;
+
+// ** Media Queries **
+// *
+// * /!\ Warning
+// *
+// * Stay in sync with useBreakpoint numbers
+// *
+$bkpt-tablet: 768px;
+$bkpt-desktop-small: 1024px;
+$bkpt-desktop-large: 1280px;

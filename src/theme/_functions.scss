@@ -1,0 +1,89 @@
+@import './variables';
+
+@function toRem($inPx) {
+  @return $inPx / $base-font-size * 1rem
+}
+
+@mixin paddingHorizontal($amount) {
+  padding-left: $amount;
+  padding-right: $amount;
+}
+
+@mixin paddingVertical($amount) {
+  padding-top: $amount;
+  padding-bottom: $amount;
+}
+
+@mixin marginHorizontal($amount) {
+  margin-left: $amount;
+  margin-right: $amount;
+}
+
+@mixin marginVertical($amount) {
+  margin-top: $amount;
+  margin-bottom: $amount;
+}
+
+@mixin marginVertical($amount) {
+  margin-top: $amount;
+  margin-bottom: $amount;
+}
+
+@mixin mobile-only {
+  @media (max-width: #{$bkpt-tablet - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet-only {
+  @media (min-width: #{$bkpt-tablet}) and (max-width: #{$bkpt-desktop-small - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet-down {
+  @media (max-width: #{$bkpt-desktop-small - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet-plus {
+  @media (min-width: #{$bkpt-tablet}) {
+    @content;
+  }
+}
+
+@mixin desktop-small-only {
+  @media (min-width: #{$bkpt-desktop-small}) and (max-width: #{$bkpt-desktop-large - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop-small-down {
+  @media (max-width: #{$bkpt-desktop-large - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop-small-plus {
+  @media (min-width: #{$bkpt-desktop-small}) {
+    @content;
+  }
+}
+
+@mixin desktop-large-plus {
+  @media (min-width: #{$bkpt-desktop-large}) {
+    @content;
+  }
+}
+
+@mixin light-theme {
+  :global(.theme--light) & {
+    @content;
+  }
+}
+@mixin dark-theme {
+  :global(.theme--dark) & {
+    @content;
+  }
+}

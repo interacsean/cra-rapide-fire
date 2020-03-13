@@ -1,0 +1,369 @@
+
+:global(.grid) {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-auto-flow: row;
+  grid-column-gap: $pad;
+  grid-row-gap: $pad;
+
+  > :global(._12) {
+    grid-column: span 12;
+  }
+  > :global(._11) {
+    grid-column: span 11;
+  }
+  > :global(._10) {
+    grid-column: span 10;
+  }
+  > :global(._9) {
+    grid-column: span 9;
+  }
+  > :global(._8) {
+    grid-column: span 8;
+  }
+  > :global(._7) {
+    grid-column: span 7;
+  }
+  > :global(._6) {
+    grid-column: span 6;
+  }
+  > :global(._5) {
+    grid-column: span 5;
+  }
+  > :global(._4) {
+    grid-column: span 4;
+  }
+  > :global(._3) {
+    grid-column: span 3;
+  }
+  > :global(._2) {
+    grid-column: span 2;
+  }
+  > :global(._1) {
+    grid-column: span 1;
+  }
+  // ** Full width
+  > :global(._mob-12) {
+    @include mobile-only {
+      grid-column: span 12;
+    }
+  }
+  > :global(._tab-12) {
+    @include tablet-only {
+      grid-column: span 12;
+    }
+  }
+  > :global(._tab-plus-12) {
+    @include tablet-plus {
+      grid-column: span 12;
+    }
+  }
+  > :global(._tab-down-12) {
+    @include tablet-down {
+      grid-column: span 12;
+    }
+  }
+  > :global(._dsk-plus-12) {
+    @include desktop-small-plus {
+      grid-column: span 12;
+    }
+  }
+
+  // ** Full width
+  > :global(._mob-11) {
+    @include mobile-only {
+      grid-column: span 11;
+    }
+  }
+  > :global(._tab-11) {
+    @include tablet-only {
+      grid-column: span 11;
+    }
+  }
+  > :global(._tab-plus-11) {
+    @include tablet-plus {
+      grid-column: span 11;
+    }
+  }
+  > :global(._tab-down-11) {
+    @include tablet-down {
+      grid-column: span 11;
+    }
+  }
+  > :global(._dsk-plus-11) {
+    @include desktop-small-plus {
+      grid-column: span 11;
+    }
+  }
+
+  // ** 10/12
+  > :global(._mob-10) {
+    @include mobile-only {
+      grid-column: span 10;
+    }
+  }
+  > :global(._tab-10) {
+    @include tablet-only {
+      grid-column: span 10;
+    }
+  }
+  > :global(._tab-plus-10) {
+    @include tablet-plus {
+      grid-column: span 10;
+    }
+  }
+  > :global(._tab-down-10) {
+    @include tablet-down {
+      grid-column: span 10;
+    }
+  }
+  > :global(._dsk-plus-10) {
+    @include desktop-small-plus {
+      grid-column: span 10;
+    }
+  }
+
+  // ** 9/12
+  > :global(._mob-9) {
+    @include mobile-only {
+      grid-column: span 9;
+    }
+  }
+  > :global(._tab-9) {
+    @include tablet-only {
+      grid-column: span 9;
+    }
+  }
+  > :global(._tab-plus-9) {
+    @include tablet-plus {
+      grid-column: span 9;
+    }
+  }
+  > :global(._tab-down-9) {
+    @include tablet-down {
+      grid-column: span 9;
+    }
+  }
+  > :global(._dsk-plus-9) {
+    @include desktop-small-plus {
+      grid-column: span 9;
+    }
+  }
+
+  // ** 8/12
+  > :global(._mob-8) {
+    @include mobile-only {
+      grid-column: span 8;
+    }
+  }
+  > :global(._tab-8) {
+    @include tablet-only {
+      grid-column: span 8;
+    }
+  }
+  > :global(._tab-plus-8) {
+    @include tablet-plus {
+      grid-column: span 8;
+    }
+  }
+  > :global(._tab-down-8) {
+    @include tablet-down {
+      grid-column: span 8;
+    }
+  }
+  > :global(._dsk-plus-8) {
+    @include desktop-small-plus {
+      grid-column: span 8;
+    }
+  }
+
+  // ** 7/12
+  > :global(._mob-7) {
+    @include mobile-only {
+      grid-column: span 7;
+    }
+  }
+  > :global(._tab-7) {
+    @include tablet-only {
+      grid-column: span 7;
+    }
+  }
+  > :global(._tab-plus-7) {
+    @include tablet-plus {
+      grid-column: span 7;
+    }
+  }
+  > :global(._tab-down-7) {
+    @include tablet-down {
+      grid-column: span 7;
+    }
+  }
+  > :global(._dsk-plus-7) {
+    @include desktop-small-plus {
+      grid-column: span 7;
+    }
+  }
+
+  // ** 6/12
+  > :global(._mob-6) {
+    @include mobile-only {
+      grid-column: span 6;
+    }
+  }
+  > :global(._tab-6) {
+    @include tablet-only {
+      grid-column: span 6;
+    }
+  }
+  > :global(._tab-plus-6) {
+    @include tablet-plus {
+      grid-column: span 6;
+    }
+  }
+  > :global(._tab-down-6) {
+    @include tablet-down {
+      grid-column: span 6;
+    }
+  }
+  > :global(._dsk-plus-6) {
+    @include desktop-small-plus {
+      grid-column: span 6;
+    }
+  }
+
+  // ** 5/12
+  > :global(._mob-5) {
+    @include mobile-only {
+      grid-column: span 5;
+    }
+  }
+  > :global(._tab-5) {
+    @include tablet-only {
+      grid-column: span 5;
+    }
+  }
+  > :global(._tab-plus-5) {
+    @include tablet-plus {
+      grid-column: span 5;
+    }
+  }
+  > :global(._tab-down-5) {
+    @include tablet-down {
+      grid-column: span 5;
+    }
+  }
+  > :global(._dsk-plus-5) {
+    @include desktop-small-plus {
+      grid-column: span 5;
+    }
+  }
+
+  // ** 4/12
+  > :global(._mob-4) {
+    @include mobile-only {
+      grid-column: span 4;
+    }
+  }
+  > :global(._tab-4) {
+    @include tablet-only {
+      grid-column: span 4;
+    }
+  }
+  > :global(._tab-plus-4) {
+    @include tablet-plus {
+      grid-column: span 4;
+    }
+  }
+  > :global(._tab-down-4) {
+    @include tablet-down {
+      grid-column: span 4;
+    }
+  }
+  > :global(._dsk-plus-4) {
+    @include desktop-small-plus {
+      grid-column: span 4;
+    }
+  }
+
+  // ** 3/12
+  > :global(._mob-3) {
+    @include mobile-only {
+      grid-column: span 3;
+    }
+  }
+  > :global(._tab-3) {
+    @include tablet-only {
+      grid-column: span 3;
+    }
+  }
+  > :global(._tab-plus-3) {
+    @include tablet-plus {
+      grid-column: span 3;
+    }
+  }
+  > :global(._tab-down-3) {
+    @include tablet-down {
+      grid-column: span 3;
+    }
+  }
+  > :global(._dsk-plus-3) {
+    @include desktop-small-plus {
+      grid-column: span 3;
+    }
+  }
+
+  // ** 2/12
+  > :global(._mob-2) {
+    @include mobile-only {
+      grid-column: span 2;
+    }
+  }
+  > :global(._tab-2) {
+    @include tablet-only {
+      grid-column: span 2;
+    }
+  }
+  > :global(._tab-plus-2) {
+    @include tablet-plus {
+      grid-column: span 2;
+    }
+  }
+  > :global(._tab-down-2) {
+    @include tablet-down {
+      grid-column: span 2;
+    }
+  }
+  > :global(._dsk-plus-2) {
+    @include desktop-small-plus {
+      grid-column: span 2;
+    }
+  }
+
+  // ** 1/11
+  > :global(._mob-1) {
+    @include mobile-only {
+      grid-column: span 1;
+    }
+  }
+  > :global(._tab-1) {
+    @include tablet-only {
+      grid-column: span 1;
+    }
+  }
+  > :global(._tab-plus-1) {
+    @include tablet-plus {
+      grid-column: span 1;
+    }
+  }
+  > :global(._tab-down-1) {
+    @include tablet-down {
+      grid-column: span 1;
+    }
+  }
+  > :global(._dsk-plus-1) {
+    @include desktop-small-plus {
+      grid-column: span 1;
+    }
+  }
+
+}

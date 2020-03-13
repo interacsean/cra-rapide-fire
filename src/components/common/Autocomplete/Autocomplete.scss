@@ -1,0 +1,51 @@
+@import '../../../theme/variables';
+@import '../../../theme/typography';
+@import '../Input/Input';
+
+.autocomplete {
+  position: relative;
+}
+
+.input {
+    @extend .input;
+    width: 100%;
+}
+
+.dropdown {
+  position: absolute;
+  left: 0;
+  z-index: 10;
+}
+
+.--default-dropdown {
+  overflow-y: auto;
+  font-size: toRem(14px);
+  @include tablet-plus {
+    font-size: toRem(16px);
+  }
+  @media (max-height: 600px) {
+    max-height: 12em;
+  }
+  @media (min-height: 601px) {
+    max-height: 16em;
+  }
+
+  @include paddingVertical($card-border-radius);
+  border-radius: $card-border-radius;
+  background-color: $col-light;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+}
+
+.row {
+  @extend :global(.content-form-text);
+  cursor: default;
+  padding: 0.5em;
+}
+
+.--highlighted, .--highlighted.--match {
+  background-color: $col-lightblue-EBF1FF;
+}
+.--match {
+  font-weight: bold;
+  //background-color: rgba($col-gray-50, 0.15);
+}

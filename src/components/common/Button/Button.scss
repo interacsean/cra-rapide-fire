@@ -1,0 +1,87 @@
+@import '../../../theme/variables';
+@import '../../../theme/functions';
+
+.button-main {
+  @include paddingHorizontal(16px);
+  position: relative;
+  cursor: pointer;
+  font-family: $font-content;
+  font-weight: $font-weight-semibold;
+  color: $col-content-on-dark;
+  border-radius: 4px;
+  display: inline-block;
+  text-align: center;
+
+  // primary
+  background-color: $col-primary-cyan;
+
+  // size medium
+  line-height: 36px;
+
+  &:active {
+    opacity: 0.80;
+  }
+}
+
+.--var-full-width {
+  display: block;
+}
+
+.--size-large {
+  @include paddingHorizontal(24px);
+  line-height: 42px;
+}
+
+.--size-small {
+  @include paddingHorizontal(12px);
+  line-height: 28px;
+}
+
+.--style-secondary {
+  background-color: $col-secondary-orange;
+}
+
+.--style-tertiary {
+  background-color: $col-bg-dark-lt2;
+}
+
+.--style-outline {
+  background-color: transparent;
+  border-width: 1px;
+  border-style: solid;
+  border-color: $col-primary-cyan;
+  color: $col-primary-cyan;
+
+  &.--style-secondary {
+    border-color: $col-secondary-orange;
+    color: $col-secondary-orange;
+  }
+  &.--style-tertiary {
+    border-color: $col-bg-dark-lt2;
+    color: $col-bg-dark-lt2;
+  }
+  &.--state-disabled {
+    background-color: transparent;
+    border-color: #80808040;
+    color: #80808040;
+  }
+}
+.--state-disabled {
+  background-color: #80808040;
+  cursor: default;
+  &:active {
+    opacity: 1;
+  }
+}
+
+.content {
+  &.--loading {
+    visibility: hidden;
+  }
+}
+
+.loading-indicator{
+  position: absolute;
+  left: 0;
+  right: 0;
+}

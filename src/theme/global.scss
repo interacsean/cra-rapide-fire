@@ -1,0 +1,30 @@
+@import "reset";
+@import "variables";
+@import "functions";
+@import "typography";
+@import "flex";
+@import "grid";
+
+html, body {
+  font-size: $base-font-size;
+  font-family: $font-content;
+}
+
+a {
+  color: $col-link;
+  &:hover {
+    color: lighten($col-link, 20%);
+  }
+  &:active {
+    color: lighten($col-link, 37%);
+  }
+  &:visited {
+    color: $col-link-visited;
+    &:hover {
+      color: lighten($col-link-visited, 20%);
+    }
+    &:active {
+      color: lighten($col-link-visited, 37%);
+    }
+  }
+}
