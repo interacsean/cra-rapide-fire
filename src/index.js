@@ -1,19 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./App";
+import Editor from './components/Editor'
 
+// import "./generate-code/generate-logic";
 import './theme/global.scss';
-
-// import XApp from "../.structure.jsx";
-
-// console.log(XApp);
-
-import "./generate-code/generate-logic";
 
 const rootElement = document.getElementById("root");
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Editor />
   </React.StrictMode>,
   rootElement
 );

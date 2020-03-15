@@ -1,0 +1,22 @@
+.container {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 6px;
+  grid-template-areas:
+          "p l"
+          "r s";
+}
+
+.props {
+  grid-area: p;
+}
+.logic {
+  grid-area: l;
+}
+.render {
+  grid-area: r;
+}
+.settings {
+  grid-area: s;
+}
