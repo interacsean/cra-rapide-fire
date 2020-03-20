@@ -6,7 +6,7 @@ import clx from '../../../utils/Html/clx';
 
 import { ButtonProps } from './Button.props';
 
-import css from './Button.scss';
+import css from './Button.module.scss';
 
 const ButtonView = <A extends any[]>(props: ButtonProps<A>): ReactElement<'div'> => {
   if (!props.text && !props.children) {

@@ -3,7 +3,7 @@ import React from 'react';
 
 import { InputProps } from './Input.props';
 
-import css from './Input.scss';
+import css from './Input.module.scss';
 import clx from '../../../utils/Html/clx';
 
 const InputView: FC<InputProps> = ({
@@ -16,18 +16,15 @@ const InputView: FC<InputProps> = ({
 }: InputProps): ReactElement<'div'> => {
   const propsClassNames = className && clx(className) || undefined;
 
-  const onChangeCb = onChange !== undefined ?
-    useCallback(
-      (e: ChangeEvent<HTMLInputElement>) => onChange(e.target.value),
-      [onChange],
-    )
-    : undefined;
-  const onBlurCb = onBlur !== undefined
-    ? useCallback(
-      (e: FocusEvent<HTMLInputElement>) => onBlur(e.target.value),
-      [onBlur],
-    )
-    : undefined;
+  const onChangeCb = useCallback(
+    (e: ChangeEvent<HTMLInputElement>) => onChange && onChange(e.target.value),
+    [onChange],
+  );
+
+  const onBlurCb = useCallback(
+    (e: FocusEvent<HTMLInputElement>) => onBlur && onBlur(e.target.value),
+    [onBlur],
+  );
 
   return (
     <input

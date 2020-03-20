@@ -8,12 +8,13 @@ import React, { ReactElement, useEffect } from 'react';
 import * as R from 'ramda';
 
 import { Nullable } from '../../../types/util/Nullable';
+import { Optional } from '../../../types/util/Optional';
 import clx from '../../../utils/Html/clx';
 import orUndef from '../../../utils/Data/orUndef/orUndef';
 import Input from '../Input';
 
 import { AutocompleteProps } from './Autocomplete.props';
-import css from './Autocomplete.scss';
+import css from './Autocomplete.module.scss';
 import useDependentCallback from '../../../utils/Hooks/useDependentCallback';
 
 const FORCE_SHOW_DROPDOWN = false;
@@ -57,49 +58,49 @@ function isItemMatch<T>(item: T, value: string, getItemValue?: (item: T) => stri
 // returns the handler, needed to pass in the generic
 function getKeyDownHandler<T>() {
   return ([
-      selectionRef,
-      inputRef,
-      disableSelectBySpace,
-      setHasFocus,
-      onChange,
-      onSelect,
-      setSelectedItemNRef,
-      getItemValue,
-    ]: [
-      React.MutableRefObject<{ selectedItem: T | null; matches: T[] }>,
-      React.MutableRefObject<HTMLInputElement>,
-      boolean | undefined,
-      React.Dispatch<React.SetStateAction<boolean>>,
-      AutocompleteProps<T>['onChange'],
-      AutocompleteProps<T>['onSelect'],
-      (item: Nullable<T>) => void,
-      (item: T) => string,
-    ],
-    [e]: [KeyboardEvent],
+            selectionRef,
+            inputRef,
+            disableSelectBySpace,
+            setHasFocus,
+            onChange,
+            onSelect,
+            setSelectedItemNRef,
+            getItemValue,
+          ]: [
+            React.MutableRefObject<{ selectedItem: T | null; matches: T[] }>,
+            React.MutableRefObject<HTMLInputElement>,
+    boolean | undefined,
+            React.Dispatch<React.SetStateAction<boolean>>,
+            AutocompleteProps<T>['onChange'],
+            AutocompleteProps<T>['onSelect'],
+            (item: Nullable<T>) => void,
+            (item: T) => string,
+          ],
+          [e]: [KeyboardEvent],
   ) => {
-    if (['ArrowDown', 'ArrowUp'].includes(e.code)) {
+    if (['ArrowDown', 'ArrowUp'].includes(e.key)) {
       e.preventDefault();
       const {
         matches: _m,
         selectedItem: _si,
       } = selectionRef.current;
       const selectedItemIdx = _m.findIndex(item => item === _si);
-      if (e.code === 'ArrowDown') {
+      if (e.key === 'ArrowDown') {
         if (selectedItemIdx === _m.length - 1) return false;
         setSelectedItemNRef(_m[selectedItemIdx + 1]);
       }
-      if (e.code === 'ArrowUp') {
+      if (e.key === 'ArrowUp') {
         if (selectedItemIdx === 0) return false;
         setSelectedItemNRef(_m[selectedItemIdx - 1]);
       }
     }
     else if (
-      ['Tab', 'Enter'].concat(!disableSelectBySpace ? ['Space'] : []).includes(e.code)
+      ['Tab', 'Enter'].concat(!disableSelectBySpace ? ['Space'] : []).includes(e.key)
     ) {
       if (selectionRef.current.selectedItem === null) return false;
       onChange(getItemValue(selectionRef.current.selectedItem));
       onSelect(getItemValue(selectionRef.current.selectedItem));
-      if (['Enter', 'Space'].includes(e.code)) {
+      if (['Enter', 'Space'].includes(e.key)) {
         // todo: browser security prevents simulating 'Tab' for next element, must solve by someEl.focus()
         // inputRef.current.dispatchEvent(new KeyboardEvent('keypress',{'code':'Tab'}));
         e.preventDefault(); // ??
@@ -143,11 +144,11 @@ function AutocompleteView<T>(props: AutocompleteProps<T>): ReactElement<'div'> {
 
   const renderRow = props.renderRow || renderRowDefault;
   const getItemValue = props.getItemValue || R.identity as (i: T) => string;
-  const useIsItemMatched = props.isItemMatch || isItemMatch;
+  const filledIsItemMatched = props.isItemMatch || isItemMatch;
 
   const matches = React.useMemo(
-    () => sortedItems.filter((item: T) => useIsItemMatched(item, props.value, getItemValue)),
-    [isItemMatch, props.value, useIsItemMatched, getItemValue],
+    () => sortedItems.filter((item: T) => filledIsItemMatched(item, props.value, getItemValue)),
+    [isItemMatch, props.value, filledIsItemMatched, getItemValue],
   );
 
   // * When matches update, auto-select the first item, and update ref value
@@ -205,7 +206,7 @@ function AutocompleteView<T>(props: AutocompleteProps<T>): ReactElement<'div'> {
   };
 
   return (
-    <div className={clx([props.className, css.autocomplete].flat())} onBlur={onBlur}>
+    <div className={clx(R.flatten([props.className, css.autocomplete]) as Optional<string>[])} onBlur={onBlur}>
       <Input
         className={[css.input, props.inputClassName]}
         {...{
@@ -231,14 +232,14 @@ function AutocompleteView<T>(props: AutocompleteProps<T>): ReactElement<'div'> {
                     {
                       renderRow(
                         item,
-                        useIsItemMatched(item, props.value, getItemValue),
+                        filledIsItemMatched(item, props.value, getItemValue),
                         selectedItem === item,
                         props.value,
                         getItemValue,
                       )
                     }
                   </div>
-              ))
+                ))
             }
           </div>
         )

@@ -5,7 +5,7 @@ import clx from '../../../utils/Html/clx';
 
 import { CardProps } from './Card.props';
 
-import css from './Card.scss';
+import css from './Card.module.scss';
 
 const CardView: FC<CardProps> = (props: CardProps): ReactElement<'div'> => {
   const classes = [props.className].flat();
